@@ -1,4 +1,4 @@
-use std::{collections::HashSet, fs};
+use std::{collections::HashSet, fs, time::Instant};
 
 type Grid = Vec<Vec<char>>;
 
@@ -131,6 +131,16 @@ impl Puzzle {
 }
 
 fn main() {
-    println!("Solution part 1: {}", Puzzle::from("input.txt").part_1());
-    println!("Solution part 2: {}", Puzzle::from("input.txt").part_2());
+    let now = Instant::now();
+    println!(
+        "Solution part 1: {}, {:.2?}",
+        Puzzle::from("input.txt").part_1(),
+        now.elapsed()
+    );
+    let now = Instant::now();
+    println!(
+        "Solution part 2: {}, {:.2?}",
+        Puzzle::from("input.txt").part_2(),
+        now.elapsed()
+    );
 }
